@@ -53,13 +53,22 @@
 	    Router = _require.Router,
 	    IndexRoute = _require.IndexRoute,
 	    hashHistory = _require.hashHistory,
-	    Main = __webpack_require__(216);
+	    Main = __webpack_require__(216),
+	    Weather = __webpack_require__(218),
+	    About = __webpack_require__(219),
+	    Contact = __webpack_require__(220);
 
 
 	ReactDOM.render(React.createElement(
 	  Router,
 	  { history: hashHistory },
-	  React.createElement(Route, { path: '/', component: Main })
+	  React.createElement(
+	    Route,
+	    { path: '/', component: Main },
+	    React.createElement(Route, { path: 'about', component: About }),
+	    React.createElement(Route, { path: 'contact', component: Contact }),
+	    React.createElement(IndexRoute, { component: Weather })
+	  )
 	), document.getElementById('app'));
 
 /***/ },
@@ -24848,6 +24857,7 @@
 	  displayName: 'Main',
 
 	  render: function render() {
+	    console.log(this.props);
 	    return React.createElement(
 	      'div',
 	      null,
@@ -24856,7 +24866,8 @@
 	        'h2',
 	        null,
 	        'Main Components'
-	      )
+	      ),
+	      this.props.children
 	    );
 	  }
 	});
@@ -24870,6 +24881,8 @@
 	'use strict';
 
 	var React = __webpack_require__(1),
+	    _require = __webpack_require__(159),
+	    Link = _require.Link,
 	    Nav = React.createClass({
 	  displayName: 'Nav',
 
@@ -24881,11 +24894,90 @@
 	        'h2',
 	        null,
 	        'Nav Components'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/' },
+	        'Get Weather'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/about' },
+	        'About'
+	      ),
+	      React.createElement(
+	        Link,
+	        { to: '/contact' },
+	        'Contact'
 	      )
 	    );
 	  }
 	});
+
 	module.exports = Nav;
+
+/***/ },
+/* 218 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1),
+	    Weather = React.createClass({
+	    displayName: 'Weather',
+
+	    render: function render() {
+	        return React.createElement(
+	            'h1',
+	            null,
+	            'Weather Component'
+	        );
+	    }
+	});
+
+	module.exports = Weather;
+
+/***/ },
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1),
+	    About = React.createClass({
+	    displayName: 'About',
+
+	    render: function render() {
+	        return React.createElement(
+	            'h1',
+	            null,
+	            'About Component'
+	        );
+	    }
+	});
+
+	module.exports = About;
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1),
+	    Contact = React.createClass({
+	    displayName: 'Contact',
+
+	    render: function render() {
+	        return React.createElement(
+	            'h1',
+	            null,
+	            'Contact Component'
+	        );
+	    }
+	});
+
+	module.exports = Contact;
 
 /***/ }
 /******/ ]);
