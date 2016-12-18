@@ -4,11 +4,13 @@
   "description": "Simple react app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node server.js"
   },
   "author": "Mustafa Qureshi",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.15.3",
     "express": "^4.13.4",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",

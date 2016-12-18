@@ -11,7 +11,10 @@ module.exports = {
       Nav:'app/components/Nav.jsx',
       Weather:'app/components/Weather.jsx',
       About:'app/components/About.jsx',
-      Contact:'app/components/Contact.jsx'
+      Contact:'app/components/Contact.jsx',
+      WeatherForm:'app/components/WeatherForm.jsx',
+      WeatherMessage:'app/components/WeatherMessage.jsx',
+      openweathermap:'app/api/openweathermap.jsx'
 
     },
     extensions: ['', '.js', '.jsx']
@@ -27,5 +30,6 @@ module.exports = {
         exclude: /(node_modules|bower_components)/
       }
     ]
-  }
+  },
+    devtool:'cheap-module-eval-source-map'
 };
